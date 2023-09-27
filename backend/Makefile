@@ -20,6 +20,9 @@ run_docker:
 migrate:
 	echo "Running migrations."
 	docker compose start db
+	#Below added in
+	#docker exec -it 7a1a16377a94 poetry run alembic upgrade head
+	# Below commented out
 	poetry run python -m alembic upgrade head
 
 test:
